@@ -1,0 +1,52 @@
+/* ============================================================
+   achievements.css — Glassmorphism achievement badges
+   ============================================================ */
+
+.achievements-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background: var(--bg-card);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.achievement-item:hover {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.1) !important;
+}
+
+.achievement-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  flex-shrink: 0;
+}
+
+.achievement-text {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.achievement-item:hover .achievement-text {
+  color: var(--text-primary);
+}

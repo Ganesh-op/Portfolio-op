@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional portfolio showcasing projects, experience, and technical expertise." />
+  <title>Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/theme.css" />
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/hero.css" />
+  <link rel="stylesheet" href="styles/techstack.css" />
+  <link rel="stylesheet" href="styles/projects.css" />
+  <link rel="stylesheet" href="styles/experience.css" />
+  <link rel="stylesheet" href="styles/achievements.css" />
+  <link rel="stylesheet" href="styles/education.css" />
+  <link rel="stylesheet" href="styles/modal.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+
+  <!-- Devicon for tech icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="main-nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" id="nav-logo">AM</a>
+      <div class="nav-links" id="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#education" class="nav-link">Education</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme"></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="app">
+    <!-- All sections injected dynamically -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <!-- Modal Portal -->
+  <div id="modal-root"></div>
+
+  <!-- Data files -->
+  <script src="data/fullstack.js"></script>
+  <script src="data/analytics.js"></script>
+
+  <!-- Components -->
+  <script src="components/themeToggle.js"></script>
+  <script src="components/header.js"></script>
+  <script src="components/techStack.js"></script>
+  <script src="components/projects.js"></script>
+  <script src="components/experience.js"></script>
+  <script src="components/achievements.js"></script>
+  <script src="components/education.js"></script>
+  <script src="components/modal.js"></script>
+
+  <!-- Core scripts -->
+  <script src="scripts/router.js"></script>
+  <script src="scripts/render.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

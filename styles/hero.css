@@ -1,0 +1,314 @@
+/* ============================================================
+   hero.css — Full-screen hero with CSS typewriter animation
+   ============================================================ */
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 0 4rem;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+
+/* --- Profile Image --- */
+.hero-image-container {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.hero-image-ring {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  padding: 4px;
+  background: var(--accent-gradient);
+  position: relative;
+}
+
+.hero-image-ring::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  opacity: 0.15;
+  filter: blur(20px);
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(1.05); }
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background: var(--bg-secondary);
+  border: 3px solid var(--bg-primary);
+}
+
+.hero-status {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #00d4aa;
+  border: 3px solid var(--bg-primary);
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 170, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(0, 212, 170, 0); }
+}
+
+/* --- Hero Info --- */
+.hero-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-greeting {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-wave {
+  display: inline-block;
+  animation: wave 2.5s ease-in-out infinite;
+  transform-origin: 70% 70%;
+  font-size: 1.4rem;
+}
+
+@keyframes wave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+}
+
+.hero-name {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.hero-name-gradient {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-role {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+/* --- CSS Typewriter --- */
+.hero-typewriter {
+  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-size: 0.95rem;
+  color: var(--accent);
+  min-height: 1.6em;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 2rem;
+}
+
+.hero-typewriter::before {
+  content: ">";
+  color: var(--accent-secondary);
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+
+.tw-text {
+  border-right: 2px solid var(--accent);
+  padding-right: 4px;
+  animation: cursorBlink 0.8s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { border-color: var(--accent); }
+  50% { border-color: transparent; }
+}
+
+/* --- Social Links --- */
+.hero-socials {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.hero-social-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.25s ease;
+}
+
+.hero-social-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.15) !important;
+}
+
+/* --- Profile mode switcher pills --- */
+.hero-mode-switcher {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.mode-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.mode-pill:hover,
+.mode-pill.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
+/* --- Scroll indicator --- */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.scroll-arrow {
+  width: 20px;
+  height: 30px;
+  border: 2px solid var(--border-hover);
+  border-radius: 10px;
+  position: relative;
+}
+
+.scroll-arrow::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 3px;
+  animation: scrollDot 2s ease-in-out infinite;
+}
+
+@keyframes scrollDot {
+  0%, 100% { top: 6px; opacity: 1; }
+  50% { top: 14px; opacity: 0.3; }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-image-ring {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero-name {
+    font-size: 2.5rem;
+  }
+
+  .hero-role {
+    font-size: 1.1rem;
+  }
+
+  .hero-typewriter {
+    justify-content: center;
+    font-size: 0.85rem;
+  }
+
+  .hero-socials {
+    justify-content: center;
+  }
+
+  .hero-mode-switcher {
+    justify-content: center;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: 2rem;
+  }
+  .hero-section {
+    padding: 5rem 0 3rem;
+  }
+}
