@@ -4,7 +4,6 @@
  * CSS-powered typewriter, social links, and profile mode switcher.
  */
 const HeaderComponent = (() => {
-
   /**
    * Render the hero section.
    * @param {Object} profile — profile data from the active data set.
@@ -27,7 +26,7 @@ const HeaderComponent = (() => {
 
     const img = document.createElement("img");
     img.className = "hero-image";
-    img.src = profile.image;
+    img.src = profile.image; // Ensure this is a valid path or base64 string
     img.alt = profile.name;
     img.loading = "eager";
 
@@ -67,7 +66,7 @@ const HeaderComponent = (() => {
     /* Social icons */
     const socials = document.createElement("div");
     socials.className = "hero-socials";
-    profile.socials.forEach(s => {
+    profile.socials.forEach((s) => {
       const a = document.createElement("a");
       a.className = "hero-social-link";
       a.href = s.url;
@@ -126,7 +125,13 @@ const HeaderComponent = (() => {
   /**
    * Simple typewriter effect cycling through phrases.
    */
-  function _typewriter(el, phrases, phraseIdx = 0, charIdx = 0, deleting = false) {
+  function _typewriter(
+    el,
+    phrases,
+    phraseIdx = 0,
+    charIdx = 0,
+    deleting = false,
+  ) {
     if (!el) return;
     const current = phrases[phraseIdx];
     const speed = deleting ? 25 : 50;
@@ -134,13 +139,22 @@ const HeaderComponent = (() => {
     if (!deleting && charIdx <= current.length) {
       el.textContent = current.substring(0, charIdx);
       charIdx++;
-      setTimeout(() => _typewriter(el, phrases, phraseIdx, charIdx, false), speed);
+      setTimeout(
+        () => _typewriter(el, phrases, phraseIdx, charIdx, false),
+        speed,
+      );
     } else if (!deleting && charIdx > current.length) {
-      setTimeout(() => _typewriter(el, phrases, phraseIdx, charIdx, true), 2000);
+      setTimeout(
+        () => _typewriter(el, phrases, phraseIdx, charIdx, true),
+        2000,
+      );
     } else if (deleting && charIdx >= 0) {
       el.textContent = current.substring(0, charIdx);
       charIdx--;
-      setTimeout(() => _typewriter(el, phrases, phraseIdx, charIdx, true), speed);
+      setTimeout(
+        () => _typewriter(el, phrases, phraseIdx, charIdx, true),
+        speed,
+      );
     } else {
       const next = (phraseIdx + 1) % phrases.length;
       setTimeout(() => _typewriter(el, phrases, next, 0, false), 500);
