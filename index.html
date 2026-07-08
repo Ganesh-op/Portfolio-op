@@ -1,78 +1,636 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional portfolio showcasing projects, experience, and technical expertise." />
-  <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vCard - Personal Portfolio</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles/theme.css" />
-  <link rel="stylesheet" href="styles/global.css" />
-  <link rel="stylesheet" href="styles/nav.css" />
-  <link rel="stylesheet" href="styles/hero.css" />
-  <link rel="stylesheet" href="styles/techstack.css" />
-  <link rel="stylesheet" href="styles/projects.css" />
-  <link rel="stylesheet" href="styles/experience.css" />
-  <link rel="stylesheet" href="styles/achievements.css" />
-  <link rel="stylesheet" href="styles/education.css" />
-  <link rel="stylesheet" href="styles/modal.css" />
-  <link rel="stylesheet" href="styles/footer.css" />
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!-- Devicon for tech icons -->
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Devicon CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
 </head>
+
 <body>
 
-  <!-- Navigation -->
-  <nav class="main-nav" id="main-nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo" id="nav-logo">AM</a>
-      <div class="nav-links" id="nav-links">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#education" class="nav-link">Education</a>
-      </div>
-      <div class="nav-actions">
-        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme"></button>
-      </div>
-    </div>
-  </nav>
+  <!--
+    - #MAIN
+  -->
 
-  <!-- Main Content -->
-  <main id="app">
-    <!-- All sections injected dynamically -->
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80" id="profile-avatar">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Richard hanrick" id="profile-name">Richard hanrick</h1>
+
+          <p class="title" id="profile-role">Web developer</p>
+
+          <a href="https://drive.google.com/drive/folders/1CuF8DjEjSpWGyPbTwsEpkcDvqPlXkXdr?usp=sharing" target="_blank" class="form-btn sidebar-resume-btn" id="sidebar-resume-link">
+            <ion-icon name="document-text-outline"></ion-icon>
+            <span>My Resume</span>
+          </a>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:richard@example.com" class="contact-link" id="contact-email">richard@example.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+12133522795" class="contact-link" id="contact-phone">+1 (213) 352-2795</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="1982-06-23" id="contact-birthday">June 23, 1982</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address id="contact-location">Sacramento, California, USA</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list" id="profile-socials">
+          <!-- Dynamically populated -->
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Experience</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+          <li class="navbar-item">
+            <a href="https://drive.google.com/drive/folders/1CuF8DjEjSpWGyPbTwsEpkcDvqPlXkXdr?usp=sharing" class="navbar-link" target="_blank" id="resume-nav-link">My Resume</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text" id="about-text-container">
+          <!-- Dynamically populated -->
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list" id="services-list">
+            <!-- Dynamically populated -->
+          </ul>
+
+        </section>
+
+        <!-- Testimonials and Clients sections removed -->
+
+        <section class="skill" style="margin-top: 35px;">
+
+          <h3 class="h3 skills-title">My Skills</h3>
+
+          <div id="skills-container">
+            <!-- Dynamically populated categorized skills blocks -->
+          </div>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #EXPERIENCE & EDUCATION
+      -->
+
+      <article class="resume" data-page="experience">
+
+        <header>
+          <h2 class="h2 article-title">Experience</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list" id="experience-timeline">
+            <!-- Dynamically populated -->
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list" id="education-timeline">
+            <!-- Dynamically populated -->
+          </ol>
+
+        </section>
+
+        <section class="achievements" style="margin-top: 30px;">
+          <h3 class="h3 timeline-title" style="margin-bottom: 20px;">Achievements</h3>
+          <ul class="skills-list content-card" id="achievements-list" style="padding: 20px; list-style-type: none; display: flex; flex-direction: column; gap: 12px;">
+            <!-- Dynamically populated achievements list -->
+          </ul>
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PROJECTS
+      -->
+
+      <article class="portfolio" data-page="projects">
+
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list" id="project-filter-list">
+            <!-- Dynamically populated -->
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list" id="project-filter-select-list">
+              <!-- Dynamically populated -->
+            </ul>
+
+          </div>
+
+          <ul class="project-list" id="project-list">
+            <!-- Dynamically populated -->
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="blog" data-page="blog" id="blog-page">
+
+        <header>
+          <h2 class="h2 article-title">Blog</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+
+                  <p class="blog-text">
+                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+
+                  <p class="blog-text">
+                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #80</h3>
+
+                  <p class="blog-text">
+                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
+
+                  <p class="blog-text">
+                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
+
+                  <p class="blog-text">
+                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #79</h3>
+
+                  <p class="blog-text">
+                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://maps.google.com/maps?q=Pune,%20Maharashtra,%20India&t=&z=12&ie=UTF8&iwloc=&output=embed"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer" id="site-footer"></footer>
 
-  <!-- Modal Portal -->
-  <div id="modal-root"></div>
 
-  <!-- Data files -->
-  <script src="data/fullstack.js"></script>
-  <script src="data/analytics.js"></script>
 
-  <!-- Components -->
-  <script src="components/themeToggle.js"></script>
-  <script src="components/header.js"></script>
-  <script src="components/techStack.js"></script>
-  <script src="components/projects.js"></script>
-  <script src="components/experience.js"></script>
-  <script src="components/achievements.js"></script>
-  <script src="components/education.js"></script>
-  <script src="components/modal.js"></script>
 
-  <!-- Core scripts -->
-  <script src="scripts/router.js"></script>
-  <script src="scripts/render.js"></script>
-  <script src="scripts/main.js"></script>
+
+  <!--
+    - #PROJECTS DETAILS MODAL
+  -->
+  <div class="modal-container" data-project-modal-container>
+    <div class="overlay" data-project-overlay></div>
+    <section class="project-modal-box">
+      <button class="modal-close-btn" data-project-modal-close-btn aria-label="Close modal">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      
+      <div class="modal-img-wrapper" style="border-radius: 12px; overflow: hidden; margin-bottom: 20px; box-shadow: var(--shadow-2); max-height: 280px; width: 100%;">
+        <img src="" alt="" width="100%" data-project-modal-img style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      
+      <div class="modal-content">
+        <h4 class="h3 modal-title" data-project-modal-title>Project Title</h4>
+        <div class="project-tags-list" id="project-modal-tags">
+          <!-- Dynamically populated badges -->
+        </div>
+        
+        <div class="modal-text" data-project-modal-text style="max-height: 180px; overflow-y: auto; padding-right: 5px;" class="has-scrollbar">
+          <p>Project description goes here...</p>
+        </div>
+        
+        <div class="project-modal-links">
+          <a href="#" target="_blank" id="project-modal-code-link" class="form-btn btn-link">
+            <ion-icon name="logo-github"></ion-icon>
+            <span>View Code</span>
+          </a>
+          <a href="#" target="_blank" id="project-modal-demo-link" class="form-btn btn-link">
+            <ion-icon name="earth-outline"></ion-icon>
+            <span>Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!--
+    - custom js link
+  -->
+  <script src="./data/fullstack.js"></script>
+  <script src="./data/analytics.js"></script>
+  <script src="./assets/js/portfolio.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>
